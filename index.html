@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For N 🏔️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Caveat:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stars-container" id="starField"></div>
+    <div id="shutter"></div>
+    <audio id="bdaySong" src="https://www.mfiles.co.uk/mp3-downloads/happy-birthday-to-you.mp3"></audio>
+
+    <div class="page active" id="page0">
+        <h2 class="title-font">What do you want for your birthday?</h2>
+        <div class="btn-group">
+            <button class="btn" onclick="go('Hug')">1. A Warm Hug</button>
+            <button class="btn" onclick="go(1)">2. A Surprise Gift</button>
+        </div>
+    </div>
+
+    <div class="page" id="pageHug">
+        <div class="emoji-large">🫂</div>
+        <h1 class="title-font">THANK YOU!</h1>
+        <p>I wish I could be there to give it for real.</p>
+        <button class="btn" onclick="go(1)">But check this out too →</button>
+    </div>
+
+    <div class="page" id="page1">
+        <div class="content-card polaroid">
+            <img src="YOUR_IMAGE_URL_HERE" alt="N">
+            <h2 class="title-font">A Grand Choice.</h2>
+            <button class="btn" onclick="go(2)">Open Letter →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page2">
+        <div class="content-card">
+            <p class="letter-text" id="typewriter"></p>
+            <button class="btn" onclick="go(3)" style="margin-top:20px;">Open Memory Jar →</button>
+        </div>
+    </div>
+
+    <div class="page" id="page3">
+        <div class="jar-icon" onclick="popJar()">🫙</div>
+        <p class="handwritten">Tap the jar to release memories...</p>
+        <button class="btn" onclick="go(4)" style="margin-top:40px;">Final Surprise →</button>
+    </div>
+
+    <div class="page" id="page4">
+        <div class="content-card">
+            <h1 class="title-font olive-text">Happy Birthday, N!</h1>
+            <p class="final-msg">"In a world of billions, you’re the only person I’d want to trek through life with. Happy Birthday to the one who makes even the hardest climbs feel easy."</p>
+            <hr class="divider">
+            <p class="adventure-ask">When is our next adventure? 🏔️</p>
+            <input type="date" id="adventureDate" onchange="startCountdown()" class="date-input">
+            <div id="countdown-display">
+                <div class="cd-unit"><span id="days">00</span><span class="cd-label">Days</span></div>
+                <div class="cd-unit"><span id="hours">00</span><span class="cd-label">Hrs</span></div>
+                <div class="cd-unit"><span id="mins">00</span><span class="cd-label">Min</span></div>
+                <div class="cd-unit"><span id="secs">00</span><span class="cd-label">Sec</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spotify-bar">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0WQiDwKJclirSYG9v5tayI?utm_source=generator&theme=0" width="300" height="80" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
